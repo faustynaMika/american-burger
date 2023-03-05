@@ -1,11 +1,10 @@
-<div class="grid lg:grid-cols-2 grid-cols-1 gap-6 max-w-screen-xl py-10 mx-auto">
+<div class="px-5 grid lg:grid-cols-2 grid-cols-1 gap-6 max-w-screen-xl py-10 mx-auto">
   <div>
-    <article
-      class="flex bg-transparent w-full h-full rounded-md text-center leading-7 lg:text-md text-sm leading-relaxed">
+    <article class="flex bg-transparent w-full h-full rounded-md text-center leading-7 lg:text-md text-sm leading-relaxed">
       <div class="flex flex-1 flex-col justify-between">
         <div class="p-4 sm:border-l-transparent sm:p-6 lg:text-lg">
           <a href="#">
-            <h3 class="uppercase text-3xl">
+            <h3 class="uppercase lg:text-3xl text-xl">
               Zapraszamy do kontaktu
             </h3>
           </a>
@@ -18,8 +17,8 @@
             <p class="pt-4 text-yellow-600"><img alt="icon" class="inline-block mr-1" src="assets/icon/mail.svg">
               info@glodnykrólik.radom.pl
             </p>
-            <p class="pt-4 text-yellow-600"><img alt="icon" class="inline-block" src="assets/icon/map-marker-2.svg">ul.Jacka
-              Malczewskiego 21/23b,<br>26-600 Radom</p>
+            <p class="pt-4 text-yellow-600"><img alt="icon" class="inline-block" src="assets/icon/map-marker-2.svg">
+              ul.Jacka Malczewskiego 21/23b,<br>26-600 Radom</p>
           </div>
           <p class="mt-2 text-sm lg:text-lg line-clamp-3 pb-1 font-bold">Godziny pracy:</p>
           <div class="lg:w-96 w-1/2 mx-auto">
@@ -41,33 +40,28 @@
           </label>
           <input
             class='w-full border-gray-800 p-4 pr-12 text-sm border border-gray-800'
-            formControlName='email'
             id='Email'
             maxlength='100'
             name='email'
             placeholder='your@example.com'
             type='email'/>
-          <div
-            class='flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1'>
+          <div class='flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1'>
           </div>
           <label class='block mb-2 text-sm font-medium' for='message'>
             Your message
           </label>
           <textarea
             class='block p-2.5 w-full text-sm border border-gray-800 focus:ring-gray-800'
-            formControlName='text'
             id='message'
             maxlength='256'
             minlength='3'
             placeholder='Ex. Message for me...'
             rows='4'>
             </textarea>
-          <div
-            class='flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1'></div>
-
+          <div class='flex items-center tracking-wide text-red-500 mt-1 ml-1'></div>
           <div class='flex items-center justify-between'>
             <button
-              class='px-8 py-3 font-bold bg-gray-800 text-gray-100 w-full hover:bg-yellow-600'>
+              class='px-8 py-3  lg:text-base text-sm font-bold bg-gray-800 text-gray-100 w-full hover:bg-yellow-600'>
               Wyślij
             </button>
           </div>
