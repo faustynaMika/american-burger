@@ -1,0 +1,8 @@
+span {
+  margin-left: auto;
+}
+
+.active {
+  border-bottom: 1px solid black;
+  color: rgb(202 138 4);
+}

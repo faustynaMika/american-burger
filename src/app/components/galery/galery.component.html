@@ -1,0 +1,34 @@
+<section class="text-gray-800">
+  <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+    <header class="text-center">
+      <h2 class="text-xl font-bold sm:text-3xl">
+        Nasza Galeria
+      </h2>
+      <p class="mt-4">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
+        praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
+        natus?
+      </p>
+    </header>
+    <div class="relative flex items-center justify-center w-full text-gray-900">
+      <button aria-label="Slide back" type="button" class="absolute left-0 z-30 p-2 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+        <svg width="8" height="14" fill="none" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4">
+          <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <div class="flex items-center justify-start w-full h-full gap-6 py-4 mx-auto overflow-auto lg:gap-8">
+        <div class="relative flex flex-shrink-0 w-full sm:w-auto" *ngFor="let photo of photos">
+          <img class="object-cover object-center h-96 aspect-square bg-gray-500" [src]="photo.img" alt="Image 1">
+        </div>
+      </div>
+      <button aria-label="Slide forward" id="next" class="absolute right-0 z-30 p-2 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4">
+          <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+

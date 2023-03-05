@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "glodny-krolik-radom": {
+      "hosting": {
+        "glodny-krolik": [
+          "glodny-krolik-radom"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "glodny-krolik-radom"
+  }
+}

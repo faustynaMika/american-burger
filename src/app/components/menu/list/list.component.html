@@ -1,0 +1,51 @@
+<div class="flex justify-center">
+  <div class="w-full lg:w-1/2 mt-10">
+    <table class="min-w-full divide-y divide-gray-800 text-md whitespace-nowrap text-left font-medium text-black">
+      <thead>
+      <tr>
+        <th class="px-5 py-2 text-yellow-600">
+          Danie
+        </th>
+        <th class="px-5 py-2 text-yellow-600">
+          Cena
+        </th>
+      </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-800">
+      <tr *ngFor="let menu of menu$ | async">
+        <td class="whitespace-nowrap font-medium text-black px-5 py-2">
+          {{menu.name}}
+        </td>
+        <td class="whitespace-nowrap ext-gray-700 px-5 py-2">{{menu.price}} zł</td>
+      </tr>
+      <tr>
+        <td class="whitespace-nowrap font-medium text-black px-5 py-2">
+          Dowóz do Kilenta
+          <span class="font-bold text-red-600"> na terenie miasta </span>
+        </td>
+        <td class="whitespace-nowrap text-gray-700 px-5 py-2">
+          5zł
+        </td>
+      </tr>
+      <tr>
+        <td class="whitespace-nowrap font-medium text-black px-5 py-2">
+          Opakowanie
+        </td>
+        <td class="whitespace-nowrap text-gray-700">
+          0,75zł
+        </td>
+      </tr>
+      <tr>
+        <td class="whitespace-nowrap font-medium text-black px-5 py-2">
+          Reklamówka
+        </td>
+        <td class="whitespace-nowrap text-gray-700">
+          0,35zł
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
