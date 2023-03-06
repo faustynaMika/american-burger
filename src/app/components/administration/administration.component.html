@@ -1,1 +1,21 @@
-<p>administration works!</p>
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
+  <div class="flex flex-col">
+     <span class="cal-day-number">
+   {{ day.date | calendarDate:'monthViewDayNumber':locale }}
+ </span>
+    <span
+      *ngFor="let event of day.events"
+      class="inline-flex items-center justify-center bg-yellow-200 px-2.5 py-0.5 text-gray-800">
+  <p class="text-sm">{{event.title}}</p>
+</span>
+  </div>
+</ng-template>
+
+<app-day-form [date]="selectedDate"></app-day-form>
+<mwl-calendar-month-view
+  (dayClicked)="onDayClick($event)"
+  [cellTemplate]="customCellTemplate"
+  [events]="events"
+  [viewDate]="selectedDate"
+>
+</mwl-calendar-month-view>

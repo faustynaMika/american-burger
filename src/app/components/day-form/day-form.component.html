@@ -1,0 +1,38 @@
+<div class="bg-white my-5 p-10">
+  <form [formGroup]="prepareForm" action="" class="space-y-4 p-4">
+    <p class="uppercase border-b font-bold border-gray-800 mx-auto text-center w-2/3">Dodaj Danie na dzień:
+      <br> {{date | date: "YYYY-MM-dd"}}</p>
+    <div class="p-8 w-full">
+      <div *ngFor="let input of inputs.controls; index as i" formArrayName="inputs">
+        <div [formGroupName]="i">
+          <!--          <label class="font-bold">{{i + 1}}</label>-->
+          <div class="mt-2">
+            <input class="border border-gray-800 p-3 text-sm flex mx-auto items-center w-1/2"
+                   formControlName="description"
+                   placeholder="np.Placek po węgiersku..."
+                   type="text"/>
+          </div>
+        </div>
+        <div class="flex p-2 text-xs font-bold uppercase text-grey-900 w-1/2 mx-auto">
+          <button (click)="deleteInputs(i)"
+                  class="bg-red-500 px-2">
+            Usuń Wpis
+          </button>
+          <button (click)="addInput()"
+                  class="bg-yellow-500 mx-2 p-2"
+                  type="button">
+            Dodaj Wpis
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="mt-4 flex items-end">
+    <button
+      (click)="addDailyRecipe()"
+      class="bg-black text-white uppercase py-2 px-4"
+      type="submit">
+      Zapisz Danie
+    </button>
+  </div>
+</div>

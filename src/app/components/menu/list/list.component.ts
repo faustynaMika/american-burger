@@ -2,8 +2,6 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 import {Observable} from "rxjs";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
-// import {Category} from "../menu/menu.component";
-
 export interface MenuItem {
   name: string;
   price: number;
@@ -31,7 +29,7 @@ export class ListComponent implements OnInit, OnChanges {
 
     let data = this.db.collection('categories').doc(this.category).collection<MenuItem>('menu')
     this.menu$ = data.valueChanges();
-    }
+  }
 
   ngOnInit(): void {
 
