@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {DailyRecipe, DailyRecipesService} from 'src/app/shared/services/daily-recipes.service';
 
 @Component({
@@ -15,7 +15,17 @@ export class DailyRecipesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.recipes$ = this.dailyRecipesService.findAll()
+    this.dailyRecipesService.getRecipesForCurrentWeek().subscribe(recipes => {console.log(recipes)})
+
+    this.recipes$ = this.dailyRecipesService.getRecipesForCurrentWeek().pipe(map(recipes => recipes.sort(this.sortByDate)))
+  }
+
+  sortByDate(first: DailyRecipe, second: DailyRecipe) {
+    if (first.date < second.date)
+      return -1;
+    if (first.date > second.date)
+      return 1;
+    return 0;
   }
 
 }

@@ -17,7 +17,7 @@
           <p>{{recipe.name}}</p>
         </td>
         <td class="whitespace-normal font-medium text-black lg:px-5 px-1 py-2">
-          <p>{{recipe.date.toDate() | date: 'dd-MM-YYYY'}}</p>
+          <p>{{recipe.date.toDate() | date: 'EEEE dd-MM-YYYY':'UTC':'pl'}}</p>
         </td>
       </tr>
       </tbody>

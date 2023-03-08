@@ -32,6 +32,10 @@ import {DayFormComponent} from './components/day-form/day-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {DailyRecipesComponent} from './components/menu/daily-recipes/daily-recipes.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {registerLocaleData} from '@angular/common';
+import localePl from '@angular/common/locales/pl';
+
+registerLocaleData(localePl);
 
 export function momentAdapterFactory() {
   return adapterFactory(moment);

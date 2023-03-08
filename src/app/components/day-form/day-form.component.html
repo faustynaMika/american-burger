@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="flex p-2 text-xs font-bold uppercase text-grey-900 w-1/2 mx-auto">
-          <button (click)="deleteInputs(i)"
+          <button (click)="deleteInput(i, input.get('id')!.value)"
                   class="bg-red-500 px-2">
             Usuń Wpis
           </button>

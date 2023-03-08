@@ -1,7 +1,8 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {DailyRecipesService} from 'src/app/shared/services/daily-recipes.service';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {DailyRecipe, DailyRecipesService} from 'src/app/shared/services/daily-recipes.service';
 import {ControlContainer, FormArray, FormControl, FormGroup, FormGroupDirective} from "@angular/forms";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-day-form',
@@ -14,7 +15,7 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
     }
   ]
 })
-export class DayFormComponent implements OnChanges, OnInit {
+export class DayFormComponent implements OnChanges {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   @Input()
@@ -32,6 +33,7 @@ export class DayFormComponent implements OnChanges, OnInit {
   get defaultInput(): FormGroup {
     return new FormGroup({
         description: new FormControl(''),
+        id: new FormControl(null),
       }
     );
   }
@@ -42,35 +44,62 @@ export class DayFormComponent implements OnChanges, OnInit {
 
   resetForm() {
     this.prepareForm.reset()
-    this._snackBar.open('ZAPISANO PRZEPIS', 'X',{
+    this._snackBar.open('ZAPISANO PRZEPIS', 'X', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-      duration: 5000,
+      duration: 50000,
+      panelClass: ['snackbar']
     });
 
-  }
-  ngOnInit():void {
   }
 
   addInput() {
     this.inputs.push(new FormGroup({
       description: new FormControl(''),
+      id: new FormControl(null)
     }))
   }
 
-  deleteInputs(index: number) {
+  clearInputs() {
+    this.inputs.clear()
+  }
+
+  addInputFromRecipe(recipe: DailyRecipe) {
+    this.inputs.push(new FormGroup({
+      description: new FormControl(recipe.name),
+      id: new FormControl(recipe.id),
+    }))
+  }
+
+  deleteInput(index: number, id?: string) {
     this.inputs.removeAt(index);
+
+    if (id != null) {
+      this.dailyRecipesService.deleteById(id)
+    }
   }
 
   addDailyRecipe() {
-    console.log(this.inputs.value);
     this.dailyRecipesService.updateByDate(this.date, this.inputs.value)
-    this.resetForm();
   }
 
-
   ngOnChanges(changes: SimpleChanges): void {
-    let date = this.dailyRecipesService.findOneByDate(this.date).subscribe(data => data.forEach(el => console.log(el.data())));
-    console.log(date)
+    this.clearInputs();
+    this.setInputsByDate()
+  }
+
+  private setInputsByDate() {
+
+    console.error("DATA" + this.date)
+
+    this.dailyRecipesService.findAllByDate(this.date)
+      .pipe(first())
+      .subscribe(data => {
+        if (data.length > 0) {
+          data.forEach(el => this.addInputFromRecipe(el));
+        } else {
+          this.addInput()
+        }
+      });
   }
 }
