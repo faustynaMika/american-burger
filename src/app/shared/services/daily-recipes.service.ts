@@ -19,22 +19,25 @@ export class DailyRecipe {
   providedIn: 'root'
 })
 export class DailyRecipesService {
+  private static readonly _excluded_days = [0, 6];
+
   private dailyRecipesRef: AngularFirestoreCollection<DailyRecipe>;
 
   constructor(private db: AngularFirestore) {
     this.dailyRecipesRef = this.db.collection('dailyRecipes', ref => ref.orderBy('date', 'desc'));
   }
 
+
   private static getCurrentWeekDays(): Date[] {
     let startOfWeek = moment().startOf('isoWeek');
-    let endOfWeek = moment().endOf('isoWeek').weekday(0);
+    let endOfWeek = moment().endOf('isoWeek');
 
     let days = [];
     let day = startOfWeek;
 
     while (day <= endOfWeek) {
 
-      if (day.day() === 0 || day.day() === 6) {
+      if (DailyRecipesService._excluded_days.includes(day.day())) {
         break;
       }
 
