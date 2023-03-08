@@ -16,8 +16,8 @@ export class AdministrationComponent implements OnInit {
   constructor(private dailyRecipeService: DailyRecipesService) {
   }
 
-  onDayClick($event: { day: MonthViewDay; sourceEvent: MouseEvent | KeyboardEvent }) {
-    this.selectedDate = $event.day.date;
+  onDayClick(date: { day: MonthViewDay }) {
+    this.selectedDate = date.day.date;
   }
 
   ngOnInit(): void {
