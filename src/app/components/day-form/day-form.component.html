@@ -7,27 +7,27 @@
         <div [formGroupName]="i">
           <!--          <label class="font-bold">{{i + 1}}</label>-->
           <div class="mt-2">
-            <input class="border border-gray-800 p-3 text-sm flex mx-auto items-center w-1/2"
+            <input class="border border-gray-800 p-3 text-sm flex mx-auto items-center w-full lg:w-1/2"
                    formControlName="description"
                    placeholder="np.Placek po węgiersku..."
                    type="text"/>
           </div>
         </div>
-        <div class="flex p-2 text-xs font-bold uppercase text-grey-900 w-1/2 mx-auto">
+        <div class="flex p-2 text-xs font-bold uppercase text-grey-900 w-full lg:w-1/2 mx-auto justify-end">
           <button (click)="deleteInput(i, input.get('id')!.value)"
-                  class="bg-red-500 px-2">
-            Usuń Wpis
+                  class="bg-red-200 px-2">
+            Usuń rubrykę
           </button>
           <button (click)="addInput()"
-                  class="bg-yellow-500 mx-2 p-2"
+                  class="bg-yellow-200 mx-2 p-2"
                   type="button">
-            Dodaj Wpis
+            Powiel rubrykę
           </button>
         </div>
       </div>
     </div>
   </form>
-  <div class="mt-4 flex items-end">
+  <div class="mt-4 flex justify-end">
     <button
       (click)="addDailyRecipe()"
       class="bg-black text-white uppercase py-2 px-4"

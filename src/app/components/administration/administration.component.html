@@ -5,8 +5,8 @@
  </span>
     <span
       *ngFor="let event of day.events"
-      class="inline-flex items-center justify-center bg-yellow-200 px-2.5 py-0.5 text-gray-800">
-  <p class="text-sm">{{event.title}}</p>
+      class="inline-flex text-gray-900 font-bold break-all" style="font-size: 10px">
+  {{event.title}}
 </span>
   </div>
 </ng-template>
@@ -17,6 +17,7 @@
   [events]="events"
   [excludeDays]="[0,6]"
   [viewDate]="selectedDate"
+  locale="pl"
 >
 </mwl-calendar-month-view>
 
