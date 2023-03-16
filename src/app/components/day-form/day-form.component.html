@@ -1,22 +1,21 @@
-<div class="bg-white my-5 p-10">
+<div class="bg-transparent my-5 p-10">
   <form [formGroup]="prepareForm" action="" class="space-y-4 lg:p-4">
-    <p class="uppercase border-b font-bold border-gray-800 mx-auto text-center w-2/3">Dodaj Danie na dzień:
+    <p class="uppercase border-b font-bold border-gray-800 mx-auto text-center w-2/3">Dodaj na dzień:
       <br> {{date | date: "YYYY-MM-dd"}}</p>
     <div class="lg:p-8 w-full">
       <div *ngFor="let input of inputs.controls; index as i" formArrayName="inputs">
         <div [formGroupName]="i">
           <!--          <label class="font-bold">{{i + 1}}</label>-->
           <div class="mt-2">
-            <input class="border border-gray-800 p-3  text-sm flex mx-auto items-center w-full lg:w-1/2"
+            <input class="border border-gray-800 p-3 rounded-md text-sm flex mx-auto items-center w-full lg:w-1/2"
                    formControlName="description"
-                   placeholder="np.Placek po węgiersku..."
                    type="text"/>
           </div>
         </div>
         <div class="flex p-2 text-xs font-bold uppercase text-grey-900 w-full lg:w-1/2 mx-auto justify-end">
           <button (click)="deleteInput(i, input.get('id')!.value)"
-                  class="lg:px-8 px-2 lg:py-3 py-1 inline-block border-2 border-red-600 text-xs lg:text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500">
-            Usuń rubrykę
+                  class="lg:px-8 px-2 lg:py-3 py-1 inline-block rounded-md bg-gray-800 text-xs lg:text-sm font-medium text-white hover:bg-red-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500">
+            Usuń
           </button>
 <!--          <button (click)="addInput()"-->
 <!--                  class="bg-yellow-200 mx-2 p-2"-->
@@ -30,9 +29,9 @@
   <div class="mt-4 flex justify-end">
     <button
       (click)="addDailyRecipe()"
-      class="inline-block border-2 border-gray-900 px-2 lg:px-8 lg:py-3 py-1 text-xs lg:text-sm font-medium text-black hover:bg-gray-600 hover:text-white focus:outline-none focus:ring active:bg-gray-500"
+      class="inline-block border-2 rounded-md border-gray-900 px-2 lg:px-8 lg:py-3 py-1 text-xs lg:text-sm font-medium text-black hover:bg-gray-600 hover:text-white focus:outline-none focus:ring active:bg-gray-500"
       type="submit">
-      Zapisz Danie
+      Zapisz
     </button>
   </div>
 </div>
