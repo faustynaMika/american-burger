@@ -19,19 +19,19 @@ export class GaleryComponent {
 photos: Photos[] = [
   {
     name: "Sałatka",
-    img: "assets/images/healthy-salad-assortment-with-copy-space.jpg"
+    img: "assets/images/Hamburger-cuate.svg"
   },
   {
     name: "Sałatka",
-    img: "assets/images/healthy-salad-assortment-with-copy-space.jpg"
+    img: "assets/images/Deconstructed food-amico.svg"
   },
   {
     name: "Sałatka",
-    img: "assets/images/healthy-salad-assortment-with-copy-space.jpg"
+    img: "assets/images/Hamburger-bro.svg"
   },
   {
     name: "Sałatka",
-    img: "assets/images/healthy-salad-assortment-with-copy-space.jpg"
+    img: "assets/images/Pizza sharing-bro.svg"
   },
 ]
 }

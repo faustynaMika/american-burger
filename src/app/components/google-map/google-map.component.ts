@@ -25,9 +25,9 @@ export class GoogleMapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.center = {
-      lat: 51.40669381390152,
-      lng: 21.151283836948384,
-    };
+    // this.center = {
+    //   lat: 51.40669381390152,
+    //   lng: 21.151283836948384,
+    // };
   }
 }

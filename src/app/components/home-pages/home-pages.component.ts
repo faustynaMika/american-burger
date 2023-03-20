@@ -14,26 +14,26 @@ interface HomeInfo {
 export class HomePagesComponent {
 
   mainInfo: HomeInfo = {
-    title: 'Pyszne domowe obiady',
-    description: 'Smaczne i niedrogie posiłki z kuchni posliej i nie tylko',
-    imageSrc: 'assets/images/plate.png'
+    title: 'POŁĄCZENIA SMAKÓW, ŻE ŚLINKA CIEKNIE!',
+    description: 'KOCHAMY ZARÓWNO KLASYKĘ, JAK I NIECODZIENNE KOMBINACJE SMAKÓW. TŁUSTO I WYTRAWNIE? CZY SŁODKO I SŁONO? SPRAWDŹ, KTÓRA Z NASZYCH PROPOZYCJI NAJLEPIEJ TRAFIA W TWÓJ GUST.',
+    imageSrc: 'assets/images/Hamburger-bro.svg'
   }
 
   infos: HomeInfo[] = [
     {
-      title: 'Dostawa do firm',
-      description: 'Dostarczamy posiłki do firm, urzędów, sklepów oraz na budowę przy minimalnej kwocie zamówienia 25 zł',
-      imageSrc: 'assets/images/hand-holding-food-boxes-picjumbo-com.jpg'
+      title: 'GreenLady',
+      description: 'Naszym znakiem rozpoznawczym jest królowa amerykańskich potraw - GreenLady. To dzięki niej nasze lokal ma niepowtarzalny sznyt, a nazwy pizz zostały zaczerpnięte z epoki, w której była produkowana.',
+      imageSrc: 'assets/images/Pizza sharing-bro.svg '
     },
     {
-      title: 'Imprezy okolicznościowe',
-      description: 'Jesteśmy firmą kateringową, gdzie organizujemy imprezy okolicznościowe chrzciny, komunie itp do 30 osób',
-      imageSrc: 'assets/images/pexels-daria-andrievskaya-11066891.jpg'
+      title: 'DODATKI I SAŁATKI',
+      description: 'JAK MAWIAJĄ BURGER BEZ FRYTEK TO JAK DOM BEZ DRZWI. SPRAWDŹ NA JAKIE DRZWI MASZ DZISIAJ OCHOTĘ!',
+      imageSrc: 'assets/images/Deconstructed food-bro.svg'
     },
     {
-      title: 'Danie dnia',
-      description: 'Codziennie przygotowujemy dla Państwa inne danie w cenie 22 zł',
-      imageSrc: 'assets/images/food-from-the-restaurant-in-the-box-picjumbo-com.jpg'
+      title: 'DOSKONAŁY SMAK TO SUMA DOSKONAŁYCH SKŁAD﻿NIKÓW',
+      description: 'JEŻELI CHODZI O SKŁADNIKI NASZYCH DAŃ, TO Z WIEKIEM ROBIMY SIĘ CORAZ BARDZIEJ ORTODOKSYJNI I RYGORYSTYCZNI. JEST DLA NAS WAŻNE, ABY NASZE DANIA BYŁY PRZYGOTOWYWANE Z JAK NAJBARDZIEJ NATURALNYCH I NIEPRZETWORZONYCH SUROWCÓW.',
+      imageSrc: 'assets/images/Hamburger-cuate.svg'
     }
   ];
 
