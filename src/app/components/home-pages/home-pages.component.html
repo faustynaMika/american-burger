@@ -4,17 +4,17 @@
     <div class="py-6 space-y-2 flex justify-center items-center basis-1/2">
       <div class="text-center lg:text-end">
         <h1 class="text-xl lg:text-4xl font-bold">{{mainInfo.title}}</h1>
-        <p class="text-sm lg:text-xl mt-5 pt-3 border-t-2 border-gray-500">{{mainInfo.description}}</p>
+        <p class="text-sm lg:text-xl mt-5 px-5 pt-3 border-t-2 border-gray-500">{{mainInfo.description}}</p>
       </div>
     </div>
   </div>
   <div
     *ngFor="let info of infos; let i = index"
-    class="max-w-sm mx-auto sm:max-w-full flex lg:pb-32 {{i % 2 == 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}} flex-col">
+    class="max-w-sm mx-auto sm:max-w-full flex lg:pb-32  lg:px-32 px-7 {{i % 2 == 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}} flex-col">
     <div class="p-6 space-y-2 flex justify-center items-center">
       <div class="">
         <h3 class="lg:text-4xl text-xl tracking-wider">{{info.title}}</h3>
-        <p class="pt-3 lg:text-xl text-sm border-t-2 border-gray-500">{{info.description}}</p>
+        <p class="pt-3 px-5 lg:text-xl text-sm border-t-2 border-gray-500">{{info.description}}</p>
       </div>
     </div>
     <img [src]="info.imageSrc" alt="img" class="object-cover lg:w-1/2 ">

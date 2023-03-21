@@ -23,7 +23,7 @@ photos: Photos[] = [
   },
   {
     name: "Sałatka",
-    img: "assets/images/Deconstructed food-amico.svg"
+    img: "assets/images/Hamburger-amico.svg"
   },
   {
     name: "Sałatka",
