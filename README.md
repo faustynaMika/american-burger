@@ -1,4 +1,6 @@
-# GlodnyKrolik
+# American Burger
+https://american-burger.vercel.app/
+![American Burger](https://user-images.githubusercontent.com/97546871/226611528-c951931e-7ebc-42f7-8d2a-31d8d9b318b6.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
