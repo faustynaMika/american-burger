@@ -2,7 +2,7 @@
   <span class="flex justify-center lg:text-base text-sm pt-4 lg:pt-10">
   <div class="flex divide-x rounded text-gray-800 divide-gray-800">
     <button *ngFor="let category of categories$ | async" (click)="selectCategory(category.id)"
-            class="px-3 py-1 hover:text-yellow-600 {{this.selectedCategory === category.id ? 'active' : ''}}">
+            class="px-3 py-1 hover:text-gray-600 {{this.selectedCategory === category.id ? 'active' : ''}}">
     {{category.name}}
   </button>
   </div>
